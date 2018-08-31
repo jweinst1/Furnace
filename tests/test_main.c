@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "test_append_str.h"
+#include "test_utils.h"
 
-
+// Main test file of Furnace
 
 int main(int argc, char const *argv[])
 {
-    test_append_str_new();
+    puts("Hello Furnace!");
 	return 0;
 }

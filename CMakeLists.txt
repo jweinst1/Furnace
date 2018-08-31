@@ -1,48 +1,46 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Smelt)
+project(Furnace)
 
-######Smelt core source files#######
+######Furnace core source files#######
 SET(core_files
-    src/Smelt.c
-    src/util/append_str.c
+    src/Furnace.c
 )
 
-####### Smelt Libraries ########
+####### Furnace Libraries ########
 
-add_library(SmeltShared SHARED 
+add_library(FurnaceShared SHARED 
     "${core_files}"
 )
 
-add_library(SmeltStatic STATIC 
+add_library(FurnaceStatic STATIC 
     "${core_files}"
 )
 
 ###################################
 
-target_include_directories(SmeltStatic
+target_include_directories(FurnaceStatic
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
 )
 
-target_include_directories(SmeltShared
+target_include_directories(FurnaceShared
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
 )
 
 # Add test executables to build
-add_executable(SmeltTests
+add_executable(FurnaceTests
     tests/test_main.c
-    tests/test_append_str.c
 )
 
-target_include_directories(SmeltTests
+target_include_directories(FurnaceTests
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
 )
 
 # links library to test executable
-target_link_libraries( SmeltTests
+target_link_libraries( FurnaceTests
     PRIVATE 
-        SmeltShared
+        FurnaceShared
 )

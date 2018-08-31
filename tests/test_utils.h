@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /* Contains various macros to facilitate unit testing and other
- * tests for Smelt.
+ * tests for Furnace.
 */
 
 #define TEST_BAR_SEP "_______________________________"

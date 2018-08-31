@@ -4,6 +4,6 @@ mkdir -p build
 cd build
 cmake ..
 make
-./SmeltTests
+./FurnaceTests
 cd ..
 rm -rf build
